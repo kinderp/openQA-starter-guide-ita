@@ -91,7 +91,7 @@ L'interfaccia web fornisce anche un'API REST-like basata su JSON
 per scripting esterno e per l'utilizzo da parte del programma worker. I Worker
 recuperareno i dati ed immettono i file da openQA verso os-autoinst per eseguire i test. 
 Un macchina host può eseguire più worker. L'applicazione web di openQA 
-si occupa della distribuzione dei lavori di test tra i lavoratori. Web
+si occupa della distribuzione dei job di test tra i lavoratori. Web
 applicazion e worker non devono essere eseguiti for forza sulla stessa macchina ma
 possono essere collegati tramite rete.
 ____
