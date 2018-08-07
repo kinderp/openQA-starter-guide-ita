@@ -6,6 +6,7 @@
 
 == Introduction
 
+openQA è uno strumento di test automatizzato che consente di testare l'intero processo di installazione di un sistema operativo. Utilizza macchine virtuali per riprodurre il processo, controllare l'output (sia da console seriale che su schermo) in ogni fase e inviare le sequenze e i comandi necessari per procedere alla successiva fase. openQA può controllare se il sistema può essere installato, se funziona correttamente in modalità 'live', se le applicazioni funzionano o se il sistema risponde come previsto a diverse opzioni di installazione e comandi.
 ____
 openQA is an automated test tool that makes it possible to test the whole
 installation process of an operating system. It uses virtual machines to
@@ -17,6 +18,11 @@ or whether the system responds as expected to different installation options and
 commands.
 ____
 
+
+Ancora più importante, openQA può eseguire diverse combinazioni di test per ogni
+revisione del sistema operativo, riportando gli errori rilevati per ciascuna
+combinazione di configurazioni hardware, opzioni di installazione e varianti del
+sistema operativo.
 ____
 Even more importantly, openQA can run several combinations of tests for every
 revision of the operating system, reporting the errors detected for each
@@ -24,6 +30,10 @@ combination of hardware configuration, installation options and variant of the
 operating system.
 ____
 
+openQA è free software rilasciato sotto
+http://www.gnu.org/licenses/gpl-2.0.html[GPLv2 licenza]. Il codice sorgente e
+la documentazione sono disponibili su https://github.com/os-autoinst[os-autoinst
+organizzazione su GitHub].
 ____
 openQA is free software released under the
 http://www.gnu.org/licenses/gpl-2.0.html[GPLv2 license]. The source code and
@@ -31,6 +41,11 @@ documentation are hosted in the https://github.com/os-autoinst[os-autoinst
 organization on GitHub].
 ____
 
+Questo documento descrive le operazioni generali e l'uso di openQA. L'obiettivo principale
+è fornire una panoramica generale dello strumento, con tutte le informazioni necessarie
+per diventare un utente felice. Argomenti più avanzati come installazione, amministrazione o
+lo sviluppo di nuovi test sono coperti da ulteriori documenti disponibili su
+https://github.com/os-autoinst/openQA[official repository].
 ____
 This document describes the general operation and usage of openQA. The main goal
 is to provide a general overview of the tool, with all the information needed to
