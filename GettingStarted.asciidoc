@@ -116,14 +116,13 @@ ____
 .The following terms are used within the context of openQA
 
 test modules:: 
-____
+
 an individual test case in a single perl module file, e.g.
 "sshxterm". If not further specified a test module is denoted with its "short
 name" equivalent to the filename including the test definition. The "full name"
 is composed of the _test group_ (TBC), which itself is formed by the top-folder
 of the test module file, and the short name, e.g. "x11-sshxterm" (for
 x11/sshxterm.pm)
-____
 
 un singolo caso di test in un singolo file di modulo perl, ad es. "Sshxterm". Se non specificato ulteriormente, un modulo di test è indicato con il suo "nome breve" equivalente al nome file che include la definizione del test. Il "nome completo" è composto dal gruppo di test (TBC), che a sua volta è formato dalla cartella superiore del file del modulo di test e dal nome breve, ad es. "x11-sshxterm" (per x11 / sshxterm.pm)
 
