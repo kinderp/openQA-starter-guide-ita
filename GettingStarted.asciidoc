@@ -202,7 +202,9 @@ build:: Different versions of a product as tested, can be considered a
 "sub-version" of _version_, e.g. "Build1234"; *CAUTION:* ambiguity: either with
 the prefix "Build" included or not
 
-build(ita)::
+build(ita):: Differenti versioni di un _product_ una volta testato, può essere considerato una
+"sotto-versione" di _version_, ad es. "Build1234"; *CAUTION:* ambiguità: con
+il prefisso "Build" incluso o no
 
 === Jobs
 
