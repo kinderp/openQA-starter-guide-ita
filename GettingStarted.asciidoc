@@ -6,6 +6,7 @@
 
 == Introduction
 
+____
 openQA is an automated test tool that makes it possible to test the whole
 installation process of an operating system. It uses virtual machines to
 reproduce the process, check the output (both serial console and
@@ -14,11 +15,15 @@ proceed to the next. openQA can check whether the system can be installed,
 whether it works properly in 'live' mode, whether applications work
 or whether the system responds as expected to different installation options and
 commands.
+____
 
+____
 Even more importantly, openQA can run several combinations of tests for every
 revision of the operating system, reporting the errors detected for each
 combination of hardware configuration, installation options and variant of the
 operating system.
+____
+
 
 openQA is free software released under the
 http://www.gnu.org/licenses/gpl-2.0.html[GPLv2 license]. The source code and
