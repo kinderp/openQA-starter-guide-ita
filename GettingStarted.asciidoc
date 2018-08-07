@@ -208,12 +208,20 @@ il prefisso "Build" incluso o no
 
 === Jobs
 
+Una delle caratteristiche più importanti di openQA è che può essere utilizzato per testare
+diverse combinazioni di azioni e configurazioni. Per ognuno di queste
+combinazioni, il sistema crea una macchina virtuale, esegue alcuni passaggi e
+restituisce un risultato complessivo. Ognuna di queste esecuzioni è chiamata "job".
+Ogni job è etichettato con un identificatore numerico e ha diverse
+'impostazioni' associate che guideranno il suo comportamento.
+___
 One of the most important features of openQA is that it can be used to test
 several combinations of actions and configurations. For every one of those
 combinations, the system creates a virtual machine, performs certain steps and
 returns an overall result. Every one of those executions is called a 'job'.
 Every job is labeled with a numeric identifier and has several associated
 'settings' that will drive its behavior.
+___
 
 A job goes through several states:
 
