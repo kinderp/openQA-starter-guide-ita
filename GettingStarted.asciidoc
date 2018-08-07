@@ -122,19 +122,31 @@ is composed of the _test group_ (TBC), which itself is formed by the top-folder
 of the test module file, and the short name, e.g. "x11-sshxterm" (for
 x11/sshxterm.pm)
 
-test modules(ita):: un singolo caso di test in un singolo file di modulo perl, ad es. "Sshxterm". Se non specificato ulteriormente, un modulo di test è indicato con il suo "nome breve" equivalente al nome file che include la definizione del test. Il "nome completo" è composto dal _gruppo di test_ (TBC), che a sua volta è formato dalla cartella superiore del file del modulo di test e dal nome breve, ad es. "x11-sshxterm" (per x11 / sshxterm.pm)
+test modules(ita):: un singolo caso di test in un singolo file di modulo perl, ad es. "sshxterm". Se non specificato ulteriormente, un modulo di test è indicato con il suo "nome breve" equivalente al nome file che include la definizione del test. Il "nome completo" è composto dal _gruppo di test_ (TBC), che a sua volta è formato dalla cartella superiore del file del modulo di test e dal nome breve, ad es. "x11-sshxterm" (per x11 / sshxterm.pm)
 
 test suite:: a collection of _test modules_, e.g. "textmode". All _test
 modules_ within one _test suite_ are run serially
+
+test suite(ita):: una raccolta di _test modules_, ad es. "textmode". Tutti i _test
+modules_ all'interno di una _test suite_ vengono eseguiti in successione
 
 job:: one run of individual test cases in a row denoted by a unique number for
 one instance of openQA, e.g. one installation with subsequent testing of
 applications within gnome
 
+job(ita):: una serie di singoli casi di test in una riga contraddistinti da un numero univoco per
+un'istanza di openQA, ad es. una installazione con successivo test di
+applicazioni all'interno di gnome
+
 test run:: equivalent to _job_
+
+test run(ita):: equivalente a _job_
 
 test result:: the result of one job, e.g. "passed" with the details of each
 individual _test module_
+
+test result(ita):: il risultato di un job, e.g. "passed" con i dettagli  per ciascuno
+dei _test module_ individuali
 
 test step:: the execution of one _test module_ within a _job_
 
