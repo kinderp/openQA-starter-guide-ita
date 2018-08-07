@@ -145,37 +145,64 @@ test run(ita):: equivalente a _job_
 test result:: the result of one job, e.g. "passed" with the details of each
 individual _test module_
 
-test result(ita):: il risultato di un job, e.g. "passed" con i dettagli  per ciascuno
+test result(ita):: il risultato di un job, ad es. "passed" con i dettagli  per ciascuno
 dei _test module_ individuali
 
 test step:: the execution of one _test module_ within a _job_
+
+test step(ita):: l'esecuzione di un _test_modele_ all'interno di un _job_
 
 distri:: a test distribution but also sometimes referring to a _product_
 (CAUTION: ambiguous, historically a "GNU/Linux distribution"), composed of
 multiple _test modules_ in a folder structure that compose _test suites_, e.g.
 "opensuse" (test distribution, short for "os-autoinst-distri-opensuse")
 
+distri(ita):: una distribuzione di test ma anche a volte riferita a un _product_
+(ATTENZIONE: ambiguo, storicamente una "distribuzione GNU / Linux"), composto da
+più moduli _test_ in una struttura di cartelle che compongono _test suite_, ad es.
+"opensuse" (distribuzione test, abbreviazione di "os-autoinst-distri-opensuse")
+
 product:: the main "system under test" (SUT), e.g. "openSUSE"
+
+product(ita):: il principale "sistema sotto test" (SUT), ad es. "openSUSE"
 
 job group:: equivalent to _product_, used in context of the webUI
 
+job group(ita):: equivalente a _product_, usato nel contesto di webUI
+
 version:: one version of a _product_, don't confuse with _builds_, e.g.
+"Tumbleweed"
+
+version(ita):: una versione di un _product_, da non confondere con _builds_, ad es.
 "Tumbleweed"
 
 flavor:: a specific variant of a _product_ to distinguish differing variants,
 e.g. "DVD"
 
+flavor(ita):: una specifica variante di un _product_ per distinguere differenti varianti,
+ad es. "DVD"
+
 arch:: an architecture variant of a _product_, e.g. "x86_64"
 
+arch(ita):: una variante di architettura di un _product_, ad es. "x86_64"
+
 machine:: additional variant of machine, e.g. used for "64bit", "uefi", etc.
+
+machine(ita):: variante aggiuntiva di una macchina, ad es. usata per "64bit", "uefi", etc.
 
 scenario:: A composition of
 +<distri>-<version>-<flavor>-<arch>-<test_suite>@<machine>+, e.g.
 "openSUSE-Tumbleweed-DVD-x86_64-gnome@64bit", nicknamed _koala_
 
+scenario:: Una composizione di
++<distri>-<version>-<flavor>-<arch>-<test_suite>@<machine>+, ad es.
+"openSUSE-Tumbleweed-DVD-x86_64-gnome@64bit", detta _koala_
+
 build:: Different versions of a product as tested, can be considered a
 "sub-version" of _version_, e.g. "Build1234"; *CAUTION:* ambiguity: either with
 the prefix "Build" included or not
+
+build(ita)::
 
 === Jobs
 
