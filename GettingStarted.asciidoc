@@ -58,6 +58,9 @@ ____
 == Architecture
 [id="architecture"]
 
+Anche se il progetto nel suo complesso è indicato come openQA, ci sono in effetti
+diversi componenti che sono ospitati in repository separati come mostrato in
+<<arch_img,the following figure>>.
 ____
 Although the project as a whole is referred to as openQA, there are in fact
 several components that are hosted in separate repositories as shown in
@@ -68,6 +71,11 @@ ____
 .openQA architecture
 image::images/openqa_architecture.png[openQA architecture]
 
+Il cuore del motore di test è un'applicazione autonoma chiamata
+'os-autoinst' (blu). In ogni esecuzione, questa applicazione crea una
+macchina virtuale e la usa per eseguire una serie di script di test (rosso).
+'os-autoinst' genera un video, delle schermate e un file JSON con
+risultati dettagliati.
 ____
 The heart of the test engine is a standalone application called
 'os-autoinst' (blue). In each execution, this application creates a
@@ -76,6 +84,16 @@ virtual machine and uses it to run a set of test scripts (red).
 detailed results.
 ____
 
+
+'openQA' (verde) d'altra parte fornisce un interfaccia web ed un'infrastruttura
+per eseguire 'os-autoinst' in un ambiente distribuito. 
+L'interfaccia web fornisce anche un'API REST-like basata su JSON
+per scripting esterno e per l'utilizzo da parte del programma worker. I Worker
+recuperareno i dati ed immettono i file da openQA verso os-autoinst per eseguire il file
+test. Un sistema host può eseguire più worker. L'applicazione web di openQA 
+si occupa della distribuzione dei lavori di test tra i lavoratori. Web
+applicazion e worker non devono essere eseguiti for forza sulla stessa macchina ma
+possono essere collegati tramite rete.
 ____
 'openQA' (green) on the other hand provides a web based user
 interface and infrastructure to run 'os-autoinst' in a distributed
