@@ -24,35 +24,44 @@ combination of hardware configuration, installation options and variant of the
 operating system.
 ____
 
-
+____
 openQA is free software released under the
 http://www.gnu.org/licenses/gpl-2.0.html[GPLv2 license]. The source code and
 documentation are hosted in the https://github.com/os-autoinst[os-autoinst
 organization on GitHub].
+____
 
+____
 This document describes the general operation and usage of openQA. The main goal
 is to provide a general overview of the tool, with all the information needed to
 become a happy user. More advanced topics like installation, administration or
 development of new tests are covered by further documents available in the
 https://github.com/os-autoinst/openQA[official repository].
+____
+
 
 == Architecture
 [id="architecture"]
 
+____
 Although the project as a whole is referred to as openQA, there are in fact
 several components that are hosted in separate repositories as shown in
 <<arch_img,the following figure>>.
+____
 
 [[arch_img]]
 .openQA architecture
 image::images/openqa_architecture.png[openQA architecture]
 
+____
 The heart of the test engine is a standalone application called
 'os-autoinst' (blue). In each execution, this application creates a
 virtual machine and uses it to run a set of test scripts (red).
 'os-autoinst' generates a video, screenshots and a JSON file with
 detailed results.
+____
 
+____
 'openQA' (green) on the other hand provides a web based user
 interface and infrastructure to run 'os-autoinst' in a distributed
 way. The web interface also provides a JSON based REST-like API for
@@ -62,6 +71,7 @@ tests. A host system can run several workers. The openQA web
 application takes care of distributing test jobs among workers. Web
 application and workers don't have to run on the same machine but
 can be connected via network instead.
+____
 
 == Basic concepts
 [id="concepts"]
