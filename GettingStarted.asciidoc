@@ -449,9 +449,9 @@ user with operator rights.
 ____
 
 Per ulteriori approfondimenti su autenticazione, autorizzazione e dettagli tecnici
-sul modello di sicurezza di openQA, fare riferimento al
+sul modello di sicurezza di openQA, fare riferimento sull'argomento al
 http://lizards.opensuse.org/2014/02/28/about-openqa-and-authentication/[dettagliato
-post del blog] sull'argomento dal team di sviluppo di openQA
+post del blog] del team di sviluppo di openQA
 ____
 For more insights about authentication, authorization and the technical details
 of the openQA security model, refer to the
