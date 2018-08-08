@@ -460,19 +460,35 @@ blog post] about the subject by the openQA development team.
 ____
 
 === Job groups
+
+Un job può appartenere a un job group. Questi job group sono visualizzati nella pagina indice
+e nel menu +Job Groups+ sulla barra di navigazione. Da lì l'overview delle pagine dei job group
+sono accessibili. Oltre ai risultati del test, vengono fornite le pagine di overview del job group
+una descrizione sul gruppo di lavoro e sono permessi i commenti.
+____
 A job can belong to a job group. Those job groups are displayed on the index page
 and in the +Job Groups+ menu on the navigation bar. From there the job group overview
 pages can be accessed. Besides the test results the job group overview pages provide
 a description about the job group and allow commenting.
+____
 
+I Job group hanno proprietà. Queste proprietà sono principalmente correlate alla cleanup. La 
+configurazione può essere eseguita nel menu degli operatori per i job group.
+____
 Job groups have properties. These properties are mostly cleanup related. The
 configuration can be done in the operators menu for job groups.
+____
 
+È anche possibile inserire i job group in categorie. I gruppi nidificati
+erediteranno proprietà dalla categoria. Le categorie hanno lo scopo di combinare job group
+con build comuni in modo che i risultati dei test per la stessa build possano essere visualizzati insieme
+nella pagina indice.
+____
 It is also possible to put job groups into categories. The nested groups will then
 inherit properties from the category. The categories are meant to combine job groups
 with common builds so test results for the same build can be shown together on
 the index page.
-
+____
 
 === Cleanup
 IMPORTANT: openQA automatically deletes data that it considers "old" based on
