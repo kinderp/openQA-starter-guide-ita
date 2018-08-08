@@ -303,16 +303,29 @@ ____
 
 === Needles
 
+Uno dei principali meccanismi per openQA per conoscere lo stato della macchina virtuale
+è il  controllo della presenza di alcuni elementi nello 'schermo' della macchina.
+Questo viene eseguito utilizzando la corrispondenza di immagini fuzzy tra lo schermo ed il così
+chiamato "needles". Un needle specifica sia gli elementi da cercare sia un
+elenco di tag utilizzati per decidere quali needles devono essere utilizzati in ogni momento.
+____
 One of the main mechanisms for openQA to know the state of the virtual machine
 is checking the presence of some elements in the machine's 'screen'.
 This is performed using fuzzy image matching between the screen and the so
 called 'needles'. A needle specifies both the elements to search for and a
 list of tags used to decide which needles should be used at any moment.
+____
 
+Un needle consiste in uno screenshot completo in formato PNG e un file json con
+lo stesso nome (ad esempio foo.png e foo.json) contenente i dati associati, come
+quali aree all'interno dello screenshot completo sono rilevanti o l'elenco dei tag
+di cui sopra.
+____
 A needle consists of a full screenshot in PNG format and a json file with
 the same name (e.g. foo.png and foo.json) containing the associated data, like
 which areas inside the full screenshot are relevant or the mentioned list of
 tags.
+____
 
 [source,json]
 -------------------------------------------------------------------
