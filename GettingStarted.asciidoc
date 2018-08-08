@@ -362,7 +362,7 @@ ____
    Nell'editor del needle le exclude areas vengono visualizzate come caselle rosse. Per trasformare una
    regular areas in una exclude areas all'interno dell'editor del needle, fare doppio clic
    sull'area interessata.
-   Nella vista dell'ago le aree di esclusione vengono visualizzate come caselle grigie.
+   Nella vista del needle le aree di esclusione vengono visualizzate come caselle grigie.
    
 ____
 There are three kinds of areas:
@@ -385,6 +385,19 @@ ____
 
 === Access management
 
+Alcune azioni in openQA richiedono privilegi speciali. openQA fornisce
+autenticazione tramite http://en.wikipedia.org/wiki/OpenID[openID]. Di default,
+openQA è configurato per utilizzare il provider openID openSUSE, ma può essere configurato molto
+facilmente per utilizzare qualsiasi altro provider valido. Ogni volta che un nuovo utente si registra
+in un'istanza, viene creato un nuovo profilo utente. Solo quel profilo
+contiene l'identità openID e due flag utilizzati per il controllo degli accessi:
+
+* *operator* Significa che l'utente è in grado di gestire i job, eseguendo azioni come
+   creare nuovi job, cancellarli, ecc.
+* *admin* Significa che l'utente è in grado di gestire gli utenti (concessione o revoca
+   diritti di amministratore e amministratore) nonché job templates e altre informazioni 
+   correlate (vedi il << job_templates, la sezione corrispondente >>).
+____
 Some actions in openQA require special privileges. openQA provides
 authentication through http://en.wikipedia.org/wiki/OpenID[openID]. By default,
 openQA is configured to use the openSUSE openID provider, but it can very
@@ -397,15 +410,34 @@ contains the openID identity and two flags used for access control:
 * *admin* Means that the user is able to manage users (granting or revoking
   operator and admin rights) as well as job templates and other related
   information (see the <<job_templates,the corresponding section>>).
+____
 
+Molte delle operazioni in un'istanza openQA non vengono eseguite attraverso l' interfaccia 
+web ma usando l'API REST-like. Gli esempi più ovvi sono i
+worker e gli script che recuperano nuove versioni del sistema operativo e
+pianificano i test corrispondenti. Questi client devono essere autorizzati da un
+operatore usando 
+http://en.wikipedia.org/wiki/Application_programming_interface_key[API chiave] con
+un secret condiviso associato.
+____
 Many of the operations in an openQA instance are not performed through the web
 interface but using the REST-like API. The most obvious examples are the
 workers and the scripts that fetch new versions of the operating system and
 schedule the corresponding tests. Those clients must be authorized by an
-operator using an
-http://en.wikipedia.org/wiki/Application_programming_interface_key[API key] with
-an associated shared secret.
+operator using an associated shared secret.
+http://en.wikipedia.org/wiki/Application_programming_interface_key[API key] 
+____
 
+
+A tale scopo, gli utenti con permessi di operatore hanno accesso nell'interfaccia web
+ad una pagina che consente loro di gestire tutte le API key di cui possono aver bisogno. Per ogni
+chiave, viene generato automaticamente un secret. L'utente può quindi configurare i
+worker o qualsiasi altra applicazione client per utilizzare qualsiasi coppia di API key e
+secret di sua proprietà. Qualsiasi client dell'API REST-like che utilizzerà una di queste API key
+sarà considerato come agente per conto dell'utente associato. Quindi la API key
+non solo deve essere corretta e valida (non scaduta), deve anche appartenere a un
+utente con diritti di operatore.
+____
 For that purpose, users with the operator flag have access in the web interface
 to a page that allows them to manage as many API keys as they may need. For every
 key, a secret is automatically generated. The user can then configure the
@@ -414,12 +446,18 @@ secret owned by him. Any client to the REST-like API using one of those API keys
 will be considered to be acting on behalf of the associated user. So the API key
 not only has to be correct and valid (not expired), it also has to belong to a
 user with operator rights.
+____
 
+Per ulteriori approfondimenti su autenticazione, autorizzazione e dettagli tecnici
+sul modello di sicurezza di openQA, fare riferimento al
+http://lizards.opensuse.org/2014/02/28/about-openqa-and-authentication/[dettagliato
+post del blog] sull'argomento dal team di sviluppo di openQA
+____
 For more insights about authentication, authorization and the technical details
 of the openQA security model, refer to the
 http://lizards.opensuse.org/2014/02/28/about-openqa-and-authentication/[detailed
 blog post] about the subject by the openQA development team.
-
+____
 
 === Job groups
 A job can belong to a job group. Those job groups are displayed on the index page
