@@ -348,6 +348,23 @@ ____
 -------------------------------------------------------------------
 
 ==== Areas ====
+
+* *Regular areas* definiscono parti rilevanti dello screenshot. Queste devono corrispondere
+   con almeno la percentuale di similarità specificata. Le regular areas sono
+   visualizzate come riquadri verdi nell'editor del needle e come cornici verdi o rosse
+   nella vista del needle (verde per le aree di corrispondenza, rosso per quelle non corrispondenti).
+* *OCR areas* definiscono anche parti rilevanti dello screenshot. Tuttavia, un algoritmo OCR
+   è usato per la corrispondenza. Le OCR areas nell'editor del needle sono
+   visualizzate come riquadri arancioni. Per trasformare un'area normale in un'area OCR all'interno
+   l'editor del needle, fare doppio clic sull'area interessata due volte. Si noti che needle
+   di questo tipo sono usati solo di rado.
+* *Exclude areas* possono essere utilizzate per ignorare parti dell'immagine di riferimento.
+   Nell'editor del needle le exclude areas vengono visualizzate come caselle rosse. Per trasformare una
+   regular areas in una exclude areas all'interno dell'editor del needle, fare doppio clic
+   sull'area interessata.
+   Nella vista dell'ago le aree di esclusione vengono visualizzate come caselle grigie.
+   
+____
 There are three kinds of areas:
 
 * *Regular areas* define relevant parts of the screenshot. Those must match
@@ -364,7 +381,7 @@ There are three kinds of areas:
   regular area into an exclude area within the needle editor, double click
   the concerning area.
   In the needle view exclude areas are displayed as gray boxes.
-
+____
 
 === Access management
 
