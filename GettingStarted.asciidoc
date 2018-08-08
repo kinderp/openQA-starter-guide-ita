@@ -224,6 +224,15 @@ Every job is labeled with a numeric identifier and has several associated
 'settings' that will drive its behavior.
 ____
 
+Un job passa attraverso diversi stati:
+
+* *scheduled* Stato iniziale per i job creati di recente. Accodato per future 
+  esecuzioni.
+* *running* In corso.
+* *cancelled* Il job è stato esplicitamente cancellato da un utente o è stato sostituito da un
+  clone (vedi sotto).
+* *done* Esecuzione terminata.
+
 ____
 A job goes through several states:
 
@@ -234,6 +243,21 @@ A job goes through several states:
   clone (see below).
 * *done* Execution finished.
 ____
+
+I Job nello stato di 'done' hanno generalmente seguito tutta una serie di passaggi
+(chiamati 'testmodules') ognuno con il proprio risultato. Ma oltre a questi
+risultati parziali, un job terminato fornisce anche un risultato complessivo dalla
+lista seguente.
+
+* *none* Per i jobs che non hanno raggiunto lo stato di 'done'.
+* *passed* Nessun controllo critico fallito durante il processo. Non necessariamente
+   significa che tutti i testmodules hanno avuto successo o che nessuna singola asserzione è fallita.
+* *failed* Almeno un'asserzione considerata critica non è stato soddisfatta in qualche punto.
+* *softfailed* Almeno un'asserzione non critica non è stato soddisfatta in qualche 
+  punto (eg. una softfailure è registrata esplicitamente attraverso +record_soft_failure+)
+  o workaround needles sono in corso.
+* *incomplete* Il job non è più in esecuzione ma non è stato fornito alcun risultato. O
+   è stato cancellato durante l'esecuzione o è crashato.
 
 ____
 Jobs in state 'done' have typically gone through a whole sequence of steps
@@ -253,6 +277,17 @@ following list.
   it was cancelled while running or it crashed.
 ____
 
+
+A volte, il motivo di un errore non è un errore nello stesso sistema operativo
+testato, ma per alcuni test obsoleti o a causa di un problema nell'esecuzione del job
+per un qualche motivo esterno In queste situazioni, ha senso rieseguire un dato lavoro da
+l'inizio una volta risolto il problema o dopo che i test sono stati aggiornati.
+Questo viene fatto per mezzo della "clonazione". Ogni lavoro può essere sostituito da un clone che
+è programmato per essere eseguito con esattamente le stesse impostazioni del lavoro originale. Se la
+il lavoro originale non è ancora in stato 'done, è annullato immediatamente.
+Da quel momento, il clone diventa la versione corrente e l'originale
+lavoro è considerato obsoleto (e può essere filtrato nella lista) ma le sue
+informazioni ed i risultati (se presenti) sono conservati per un riferimento futuro.
 ____
 Sometimes, the reason of a failure is not an error in the tested operating system
 itself, but an outdated test or a problem in the execution of the job for some
