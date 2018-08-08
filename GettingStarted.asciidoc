@@ -194,7 +194,7 @@ scenario:: A composition of
 +<distri>-<version>-<flavor>-<arch>-<test_suite>@<machine>+, e.g.
 "openSUSE-Tumbleweed-DVD-x86_64-gnome@64bit", nicknamed _koala_
 
-scenario:: Una composizione di
+scenario(ita):: Una composizione di
 +<distri>-<version>-<flavor>-<arch>-<test_suite>@<machine>+, ad es.
 "openSUSE-Tumbleweed-DVD-x86_64-gnome@64bit", detta _koala_
 
@@ -224,6 +224,7 @@ Every job is labeled with a numeric identifier and has several associated
 'settings' that will drive its behavior.
 ____
 
+____
 A job goes through several states:
 
 * *scheduled* Initial state for recently created jobs. Queued for future
@@ -232,7 +233,9 @@ A job goes through several states:
 * *cancelled* The job was explicitly cancelled by the user or was replaced by a
   clone (see below).
 * *done* Execution finished.
+____
 
+____
 Jobs in state 'done' have typically gone through a whole sequence of steps
 (called 'testmodules') each one with its own result. But in addition to those
 partial results, a finished job also provides an overall result from the
@@ -248,7 +251,9 @@ following list.
   or workaround needles are in place.
 * *incomplete* The job is no longer running but no result was provided. Either
   it was cancelled while running or it crashed.
+____
 
+____
 Sometimes, the reason of a failure is not an error in the tested operating system
 itself, but an outdated test or a problem in the execution of the job for some
 external reason. In those situations, it makes sense to re-run a given job from
@@ -259,6 +264,7 @@ original job is still not in 'done' state, it's cancelled immediately.
 From that point in time, the clone becomes the current version and the original
 job is considered outdated (and can be filtered in the listing) but its
 information and results (if any) are kept for future reference.
+____
 
 === Needles
 
